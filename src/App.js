@@ -1,5 +1,5 @@
 import './App.css';
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import getResultsFromWiki from './searchWikipedia';
 
 function App() {
@@ -22,13 +22,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Wiki Practice Search</h1>    
-        <input type="text" onChange={inputHandler} placeholder="search"/>
+      <div className='iconWrap'/> 
+      <h1 className='App-header'>Wiki Practice Search</h1> 
+      <div>
+        <input className='searchbar' type="text" onChange={inputHandler} placeholder="search"/>
         <button onClick={()=>getResults(searchTerm)}>Search</button>
-        <button onClick={()=>console.log(topTitles)}>chekc Tiltes</button>
-        <ul>
+        <ul className='App-list'>
           {resultList}
         </ul>
+      </div>   
     </div>
   );
 }
